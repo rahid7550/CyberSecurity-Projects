@@ -25,6 +25,12 @@ A Flask-based educational project that demonstrates how browser-provided client 
 - Flask
 - Requests
 - Cloudflared (optional, for public access)
+  
+---
+
+## Screenshot
+
+![Home](screenshots/home.png)
 
 ---
 
