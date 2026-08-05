@@ -8,7 +8,7 @@ A collection of cybersecurity projects developed for learning, research, and edu
 
 | Project | Description | Status |
 |---------|-------------|--------|
-| 📁 Personal_Info | Flask-based browser information detection project | ✅ Completed |
+| 📁 Personal_Info | Flask-based information disclosure project | ✅ Completed |
 
 ---
 
