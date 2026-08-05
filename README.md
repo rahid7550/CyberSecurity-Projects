@@ -32,15 +32,7 @@ A collection of cybersecurity projects developed for learning, research, and edu
 CyberSecurity-Projects
 │
 ├── Personal_Info
-├── Port_Scanner
-├── Password_Generator
-├── Packet_Sniffer
-├── Web_Vulnerability_Scanner
-├── Directory_Brute_Forcer
-├── Subdomain_Enumerator
-├── Wazuh_Lab
-├── Log_Analyzer
-└── Hash_Cracker
+
 ```
 
 ---
