@@ -28,9 +28,26 @@ A Flask-based educational project that demonstrates how browser-provided client 
   
 ---
 
-## Screenshot
+## Screenshots
+
+### Home
 
 ![Home](screenshots/home.png)
+
+
+### Result
+
+![Result](screenshots/result.png)
+
+
+### Browser Information
+
+![Browser](screenshots/browser_info.png)
+
+
+### Network Information
+
+![Network](screenshots/network_info.png)
 
 ---
 
