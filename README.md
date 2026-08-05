@@ -6,8 +6,8 @@ A collection of cybersecurity projects developed for learning, research, and edu
 
 ## Projects
 
-| Project |                             | Description |                     | Status |
-|---------|                             |-------------|                      |--------|
+| Project | Description | Status |
+|---------|-------------|--------|
 | 📁 Personal_Info | Flask-based browser information detection project | ✅ Completed |
 | 📁 Port_Scanner | TCP/UDP port scanner written in Python | 🚧 Coming Soon |
 | 📁 Password_Generator | Secure password generator | 🚧 Coming Soon |
