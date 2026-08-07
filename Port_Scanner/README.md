@@ -1,51 +1,131 @@
-# Network Port Scanner — A Concurrency-Aware Reconnaissance Tool
+# Network Port Scanner
 
-## Abstract
-A production-quality TCP port scanner built in Python that combines
-bounded-concurrency engineering with standardized network forensics
-techniques. The tool performs connect-based port enumeration, service
-fingerprinting, and banner extraction, and exports structured reports
-in JSON, CSV, and HTML formats. It is architected as a modular,
-testable library rather than a monolithic script, following OWASP
-reconnaissance and PTES enumeration guidelines.
+## Overview
 
-## Motivation & Background
-Network enumeration is the foundation of both offensive security and
-defensive hygiene. Scanning reveals the *attack surface* of a host —
-the set of exposed services. When a port is open, it indicates a
-listening application, which becomes a candidate for version
-discovery and vulnerability correlation (e.g., CVEs). This project
-implements that first, critical measurement step in a safe,
-observable, and extensible manner.
+A modular, multi-threaded TCP port scanner built with Python for cybersecurity learning and authorized network reconnaissance. The tool performs fast TCP port scanning, basic service fingerprinting, banner grabbing, and generates reports in multiple formats.
 
-## Methodology
-1. **Port probing** — TCP three-way-handshake connect attempts
-   (`connect_ex`), governed by per-attempt timeouts.
-2. **Concurrency control** — A bounded `ThreadPoolExecutor` (default
-   200 workers) yields high throughput while preventing resource
-   exhaustion — a deliberate trade-off between speed and host load.
-3. **Service fingerprinting** — IANA-derived static table plus
-   best-effort protocol banner grabbing.
-4. **Reporting** — Deterministic, sorted results exported to machine-
-   and human-readable formats.
+The project follows a clean, modular architecture and demonstrates practical concepts including concurrent programming, socket programming, network enumeration, and automated reporting.
 
-## Design Decisions
-| Decision | Justification |
-|----------|---------------|
-| Dataclass model | Immutable, typed, testable result records |
-| Config module | No hard-coded magic numbers; behavior is data-driven |
-| Logging module | Auditable execution history (good practice + R&D portfolio) |
-| CLI via `argparse` | Consistent with professional Python tool UX |
-| ThreadPoolExecutor | Safer concurrency pattern than raw threads |
+---
 
-## Limitations & Future Work
-- **TCP-only** currently; UDP scanning (ICMP port-unreachable
-  detection) is a planned extension.
-- **SYN (stealth) scan** requires raw sockets / elevated privileges
-  and is roadmaped with packet-crafting via `scapy`.
-- **OS fingerprinting** (TTL-based) can be layered on a future release.
+## Features
+
+- Fast multi-threaded TCP port scanning
+- Configurable scan profiles (Quick, Common, Full)
+- Service detection using common port mappings
+- Banner grabbing for supported services
+- Configurable timeout and worker threads
+- Export scan results to:
+  - JSON
+  - CSV
+  - HTML
+- Modular project structure
+- Command-line interface using `argparse`
+- Unit tested with **Pytest**
+
+---
+
+## Project Structure
+
+```text
+Port_Scanner/
+│
+├── scanner/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── core.py
+│   ├── fingerprint.py
+│   └── reporting.py
+│
+├── tests/
+│   └── test_core.py
+│
+├── reports/
+├── README.md
+├── main.py
+├── requirements.txt
+├── requirements-dev.txt
+└── .gitignore
+```
+
+---
+
+## Technologies Used
+
+- Python 3
+- Socket Programming
+- ThreadPoolExecutor
+- argparse
+- JSON
+- CSV
+- HTML
+- Pytest
+
+---
+
+## Usage
+
+```bash
+python3 main.py example.com --profile quick
+```
+
+Generate reports:
+
+```bash
+python3 main.py example.com --format json,csv,html
+```
+
+---
 
 ## Testing
+
+Install development dependencies:
+
 ```bash
-pip install -r requirements.txt
-pytest tests/
+pip install -r requirements-dev.txt
+```
+
+Run all tests:
+
+```bash
+python3 -m pytest
+```
+
+Example output:
+
+```
+=====================
+15 passed in 0.04s
+=====================
+```
+
+---
+
+## Limitations
+
+- Supports TCP scanning only
+- UDP scanning is not implemented
+- SYN (Stealth) scan is not implemented
+- OS fingerprinting is not implemented
+
+---
+
+## Future Improvements
+
+- UDP Port Scanner
+- SYN Scan
+- OS Fingerprinting
+- IPv6 Support
+- Service Version Detection
+- Progress Bar
+- XML/Nmap compatible output
+
+---
+
+## Disclaimer
+
+This project is intended for educational purposes and authorized security testing only. Always obtain proper permission before scanning systems that you do not own or manage.
+
+## License
+
+This project is licensed under the MIT License.
