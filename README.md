@@ -33,7 +33,7 @@ A collection of cybersecurity projects developed for learning, research, and edu
 CyberSecurity-Projects
 │
 ├── Personal_Info
-
+├── Port_Scanner
 ```
 
 ---
@@ -42,4 +42,4 @@ CyberSecurity-Projects
 
 **Rahid Hossain**
 
-Cyber Security | SOC | Python | Flask | Networking
+Cyber Security | SOC | Python | Networking
