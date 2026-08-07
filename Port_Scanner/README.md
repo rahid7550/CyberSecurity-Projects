@@ -98,6 +98,13 @@ Example output:
 15 passed in 0.04s
 =====================
 ```
+## Screenshots
+
+### HTML Report
+
+The generated HTML report provides a structured overview of the scan results, including open ports, detected services, and banners.
+
+![HTML Report](screenshots/html_report.png)
 
 ---
 
